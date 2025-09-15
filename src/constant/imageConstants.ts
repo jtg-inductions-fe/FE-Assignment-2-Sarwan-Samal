@@ -20,9 +20,14 @@ export const USER_AVATAR = [
     michealAvatar,
     neilAvatar,
     thomasAvatar,
-];
+] as const;
 
-export const GRID_IMAGES = [gridImage1, gridImage2, gridImage3, gridImage4];
+export const GRID_IMAGES = [
+    gridImage1,
+    gridImage2,
+    gridImage3,
+    gridImage4,
+] as const;
 
 export { LOGO };
 export { PAGE_404, WRONG_PAGE };

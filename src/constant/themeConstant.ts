@@ -26,7 +26,7 @@ export const COLORS = {
         800: '#1E429F',
     },
     WHITE: '#FFFFFF',
-};
+} as const;
 
 /**
  * Base font size in pixels.
