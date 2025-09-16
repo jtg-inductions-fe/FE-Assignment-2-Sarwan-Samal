@@ -9,7 +9,9 @@ import { routes } from '@routes';
 import { theme } from '@theme';
 
 const rootElement = document.getElementById('root') as HTMLElement;
-const router = createBrowserRouter(routes);
+const router = createBrowserRouter(routes, {
+    basename: import.meta.env.BASE_URL ?? '/',
+});
 
 createRoot(rootElement).render(
     <StrictMode>

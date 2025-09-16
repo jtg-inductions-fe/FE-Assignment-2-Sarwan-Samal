@@ -6,4 +6,4 @@ export {
     mainAvatar,
     USER_AVATAR,
     GRID_IMAGES,
-} from './imageConstants';
+} from '../assets/images/imageConstants';
