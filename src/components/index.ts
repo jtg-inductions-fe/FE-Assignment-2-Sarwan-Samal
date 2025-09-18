@@ -1,3 +1,3 @@
 export { SearchBar } from './SearchBar';
-export { CustomAvatar } from './CustomAvatar';
-export { CustomIconButton } from './CustomIconButton';
+export { Avatar } from './Avatar';
+export { IconButton } from './IconButton';

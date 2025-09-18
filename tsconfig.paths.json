@@ -10,7 +10,8 @@
             "@pages": ["pages"],
             "@container": ["container"],
             "@components": ["components"],
-            "@mocks": ["mocks"]
+            "@mocks": ["mocks"],
+            "@context": ["context"]
         }
     }
 }

@@ -14,12 +14,10 @@ import {
 
 import NotificationsIcon from '@assets/icons/Bell.svg?react';
 import MenuIcon from '@assets/icons/menu.svg?react';
-import { CustomAvatar, SearchBar } from '@components';
-import { CustomIconButton } from '@components';
+import { Avatar, IconButton, SearchBar } from '@components';
 import { LOGO } from '@constant';
-import { UserData } from '@mocks';
-import { Product } from '@mocks';
-import { ProductData } from '@mocks';
+import { useDataContext } from '@context';
+import type { Product } from '@mocks';
 
 import { HeaderBox } from './Header.style';
 
@@ -35,11 +33,12 @@ export const Header = () => {
     const handlePopoverClose = () => setpopoverAnchorEl(null);
     const popoverId = popoverOpen ? 'user-popover' : undefined;
 
-    const searchValue = ProductData.map((item: Product) => item.title);
+    const { user, products } = useDataContext();
+    const searchValue = products.map((item: Product) => item.title);
 
     const handleSearch = ({
         value,
-        ProductData: ProductDataList,
+        products: ProductDataList,
         navigate: nav,
     }: HandleSearchProps) => {
         const val = typeof value === 'string' ? value.trim() : '';
@@ -66,19 +65,19 @@ export const Header = () => {
                             void handleSearch({
                                 e,
                                 value,
-                                ProductData,
+                                products,
                                 navigate,
                             });
                         }}
                     />
                 </Stack>
             ) : (
-                <CustomIconButton buttonSize={35} aria-label="Open Menu">
+                <IconButton buttonSize={35} aria-label="Open Menu">
                     <MenuIcon />
-                </CustomIconButton>
+                </IconButton>
             )}
             <Stack direction="row" gap={3} sx={{ alignItems: 'center' }}>
-                <CustomIconButton
+                <IconButton
                     aria-label="Notifications"
                     buttonSize={32}
                     hasBoxShadow={isMedium}
@@ -86,7 +85,7 @@ export const Header = () => {
                     onClick={() => void navigate('/notfications')}
                     icon={NotificationsIcon}
                 />
-                <CustomIconButton
+                <IconButton
                     aria-label="Open User Popover"
                     aria-describedby={popoverId}
                     onClick={handlePopoverClick}
@@ -94,12 +93,8 @@ export const Header = () => {
                     isRounded
                     hasBoxShadow={isMedium}
                 >
-                    <CustomAvatar
-                        src={UserData.image}
-                        size={32}
-                        alt="User Avatar"
-                    />
-                </CustomIconButton>
+                    <Avatar src={user.image} size={32} alt="User Avatar" />
+                </IconButton>
                 <Popover
                     id={popoverId}
                     open={popoverOpen}
@@ -113,11 +108,9 @@ export const Header = () => {
                             background: theme.palette.background.default,
                         }}
                     >
-                        <Typography variant="subtitle1">
-                            {UserData.name}
-                        </Typography>
+                        <Typography variant="subtitle1">{user.name}</Typography>
                         <Typography variant="subtitle2">
-                            {UserData.email}
+                            {user.email}
                         </Typography>
                     </Box>
                 </Popover>

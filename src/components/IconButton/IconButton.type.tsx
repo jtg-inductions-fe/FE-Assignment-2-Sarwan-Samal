@@ -1,8 +1,8 @@
-import { IconButtonProps } from '@mui/material';
+import { IconButtonProps as MuiIconButtonProps } from '@mui/material';
 
-export type CustomIconButtonProps = {
+export type IconButtonProps = {
     buttonSize: number;
     isRounded?: boolean;
     icon?: React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
     hasBoxShadow?: boolean;
-} & IconButtonProps;
+} & MuiIconButtonProps;

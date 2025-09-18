@@ -1,12 +1,9 @@
 import { forwardRef } from 'react';
 
-import { StyledIconButton } from './CustomIconButton.style';
-import { CustomIconButtonProps } from './CustomIconButton.type';
+import { StyledIconButton } from './IconButton.style';
+import { IconButtonProps } from './IconButton.type';
 
-export const CustomIconButton = forwardRef<
-    HTMLButtonElement,
-    CustomIconButtonProps
->(
+export const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>(
     (
         {
             icon: Icon,
@@ -16,7 +13,7 @@ export const CustomIconButton = forwardRef<
             children,
             onClick,
             ...props
-        }: CustomIconButtonProps,
+        }: IconButtonProps,
         ref,
     ) => (
         <StyledIconButton
@@ -33,4 +30,4 @@ export const CustomIconButton = forwardRef<
         </StyledIconButton>
     ),
 );
-CustomIconButton.displayName = 'CustomIconButton';
+IconButton.displayName = 'IconButton';

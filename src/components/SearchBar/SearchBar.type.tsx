@@ -10,6 +10,6 @@ export type SearchBarProps<T> = {
 export type HandleSearchProps = {
     e: React.SyntheticEvent;
     value: string;
-    ProductData: Product[];
+    products: Product[];
     navigate: NavigateFunction;
 };

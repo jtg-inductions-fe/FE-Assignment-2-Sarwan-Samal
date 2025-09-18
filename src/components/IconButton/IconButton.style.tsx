@@ -1,14 +1,14 @@
-import { IconButton, styled } from '@mui/material';
+import { IconButton as MuiIconButton, styled } from '@mui/material';
 
-import type { CustomIconButtonProps } from './CustomIconButton.type';
+import type { IconButtonProps } from './IconButton.type';
 
-export const StyledIconButton = styled(IconButton, {
+export const StyledIconButton = styled(MuiIconButton, {
     shouldForwardProp: (prop) =>
         prop != 'isRounded' &&
         prop != 'buttonSize' &&
         prop != 'hasBoxShadow' &&
         prop != 'icon',
-})<CustomIconButtonProps>(
+})<IconButtonProps>(
     ({
         theme: { shadows },
         buttonSize = 32,
