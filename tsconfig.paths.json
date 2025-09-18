@@ -9,7 +9,8 @@
             "@routes": ["routes"],
             "@pages": ["pages"],
             "@container": ["container"],
-            "@components": ["components"]
+            "@components": ["components"],
+            "@mocks": ["mocks"]
         }
     }
 }

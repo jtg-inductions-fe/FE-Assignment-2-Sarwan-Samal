@@ -1,0 +1,15 @@
+import { Product } from 'mocks/Product/Product.type';
+import { NavigateFunction } from 'react-router-dom';
+
+import { AutocompleteProps } from '@mui/material';
+
+export type SeacrhBarProps<T> = {
+    placeholder?: string;
+} & Omit<AutocompleteProps<T, false, true, true>, 'renderInput'>;
+
+export type HandleSearchProps = {
+    e: React.SyntheticEvent;
+    value: string;
+    ProductData: Product[];
+    navigate: NavigateFunction;
+};
