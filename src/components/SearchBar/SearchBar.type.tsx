@@ -1,9 +1,9 @@
-import { Product } from 'mocks/Product/Product.type';
+import type { Product } from 'mocks/Product/Product.type';
 import { NavigateFunction } from 'react-router-dom';
 
-import { AutocompleteProps } from '@mui/material';
+import type { AutocompleteProps } from '@mui/material';
 
-export type SeacrhBarProps<T> = {
+export type SearchBarProps<T> = {
     placeholder?: string;
 } & Omit<AutocompleteProps<T, false, true, true>, 'renderInput'>;
 

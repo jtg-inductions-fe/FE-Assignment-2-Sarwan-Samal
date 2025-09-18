@@ -8,9 +8,9 @@ export const HeaderBox = styled(Box)(
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
-        height: spacing(16),
+        minHeight: spacing(16),
         [breakpoints.up('md')]: {
-            height: spacing(17.25),
+            minHeight: spacing(17.25),
         },
     }),
 );

@@ -1,10 +1,13 @@
 import { IconButton, styled } from '@mui/material';
 
-import { CustomIconButtonProps } from './CustomIconButton.type';
+import type { CustomIconButtonProps } from './CustomIconButton.type';
 
 export const StyledIconButton = styled(IconButton, {
     shouldForwardProp: (prop) =>
-        prop != 'isRounded' && prop != 'buttonSize' && prop != 'hasBoxShadow',
+        prop != 'isRounded' &&
+        prop != 'buttonSize' &&
+        prop != 'hasBoxShadow' &&
+        prop != 'icon',
 })<CustomIconButtonProps>(
     ({
         theme: { shadows },

@@ -13,7 +13,7 @@ export const components: Components = {
                 fontDisplay: 'swap',
                 fontFamily: 'Inter',
                 fontStyle: 'normal',
-                fontWeight: '100 900',
+                fontWeight: '400',
                 src: `url(${InterRegularWOFF2}) format('woff2'), 
         url(${InterRegularTTF}) format('truetype')`,
             },

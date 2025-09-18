@@ -1,8 +1,7 @@
 import { useState } from 'react';
 
 import { HandleSearchProps } from 'components/SearchBar/SearchBar.type';
-import { useNavigate } from 'react-router';
-import { Link } from 'react-router';
+import { Link, useNavigate } from 'react-router-dom';
 
 import {
     Box,
@@ -38,16 +37,18 @@ export const Header = () => {
 
     const searchValue = ProductData.map((item: Product) => item.title);
 
-    const handleSearch = async ({
+    const handleSearch = ({
         value,
         ProductData: ProductDataList,
         navigate: nav,
     }: HandleSearchProps) => {
+        const val = typeof value === 'string' ? value.trim() : '';
+        if (!val) return;
         const currProd = ProductDataList.find(
-            (product) => product.title === value,
+            (product) => product.title === val,
         );
-        if (currProd) await nav(currProd.to);
-        else await nav(value);
+        if (currProd) void nav(currProd.to);
+        else void nav(val);
     };
 
     return (
@@ -72,12 +73,13 @@ export const Header = () => {
                     />
                 </Stack>
             ) : (
-                <CustomIconButton buttonSize={35}>
+                <CustomIconButton buttonSize={35} aria-label="Open Menu">
                     <MenuIcon />
                 </CustomIconButton>
             )}
             <Stack direction="row" gap={3} sx={{ alignItems: 'center' }}>
                 <CustomIconButton
+                    aria-label="Notifications"
                     buttonSize={32}
                     hasBoxShadow={isMedium}
                     isRounded={isMedium}
@@ -85,6 +87,7 @@ export const Header = () => {
                     icon={NotificationsIcon}
                 />
                 <CustomIconButton
+                    aria-label="Open User Popover"
                     aria-describedby={popoverId}
                     onClick={handlePopoverClick}
                     buttonSize={32}
