@@ -1,8 +1,9 @@
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import { Accordion as MuiAccordion, Typography } from '@mui/material';
+import { Typography } from '@mui/material';
 
 import { NavItem } from '@components';
 
+import { StyledAccordion } from './Accordion.style';
 import {
     StyledAccordionDetails,
     StyledAccordionSummary,
@@ -15,7 +16,7 @@ export const Accordion = ({
     items = [],
     ...props
 }: AccordionProps) => (
-    <MuiAccordion elevation={0} {...props}>
+    <StyledAccordion elevation={0} {...props} disableGutters>
         <StyledAccordionSummary expandIcon={<ExpandMoreIcon />}>
             {Icon && <Icon />}
             <Typography variant="subtitle1" fontWeight={500}>
@@ -27,5 +28,5 @@ export const Accordion = ({
                 <NavItem key={index} label={item.label} to={item.to} />
             ))}
         </StyledAccordionDetails>
-    </MuiAccordion>
+    </StyledAccordion>
 );

@@ -6,7 +6,7 @@ import { SidebarWrapper } from './Sidebar.style';
 import { SideBarItemProps, SideBarProps } from './Sidebar.type';
 export const Sidebar = ({ items }: SideBarProps) => {
     const renderSidebarItems = (sidebarItems: SideBarItemProps[]) => (
-        <Stack gap={2}>
+        <Stack gap={5}>
             {sidebarItems.map((item, index) =>
                 item.children ? (
                     <Accordion
