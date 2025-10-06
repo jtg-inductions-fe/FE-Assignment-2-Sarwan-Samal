@@ -5,6 +5,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router';
 
 import { CssBaseline, ThemeProvider } from '@mui/material';
 
+import { DataProvider } from '@context';
 import { routes } from '@routes';
 import { theme } from '@theme';
 
@@ -15,9 +16,11 @@ const router = createBrowserRouter(routes, {
 
 createRoot(rootElement).render(
     <StrictMode>
-        <ThemeProvider theme={theme}>
-            <CssBaseline />
-            <RouterProvider router={router} />
-        </ThemeProvider>
+        <DataProvider>
+            <ThemeProvider theme={theme}>
+                <CssBaseline />
+                <RouterProvider router={router} />
+            </ThemeProvider>
+        </DataProvider>
     </StrictMode>,
 );
