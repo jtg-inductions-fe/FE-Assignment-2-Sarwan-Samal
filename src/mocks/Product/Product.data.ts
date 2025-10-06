@@ -37,4 +37,4 @@ export const ProductData: Product[] = [
         sales: 22,
         to: '/product/multipurpose-template',
     },
-];
+] satisfies Product[];

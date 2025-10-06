@@ -7,7 +7,6 @@ export const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>(
     (
         {
             icon: Icon,
-            buttonSize,
             isRounded,
             hasBoxShadow,
             children,
@@ -18,7 +17,6 @@ export const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>(
     ) => (
         <StyledIconButton
             ref={ref}
-            buttonSize={buttonSize}
             isRounded={isRounded}
             hasBoxShadow={hasBoxShadow}
             onClick={onClick}

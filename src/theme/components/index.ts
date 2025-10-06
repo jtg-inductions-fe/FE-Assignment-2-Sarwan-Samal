@@ -27,4 +27,20 @@ export const components: Components = {
             },
         },
     },
+    MuiIconButton: {
+        styleOverrides: {
+            sizeSmall: {
+                width: 28,
+                height: 28,
+            },
+            sizeMedium: {
+                width: 32,
+                height: 32,
+            },
+            sizeLarge: {
+                width: 34,
+                height: 34,
+            },
+        },
+    },
 };
