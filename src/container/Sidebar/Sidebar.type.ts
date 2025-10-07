@@ -13,4 +13,6 @@ export type SideBarItemProps = {
 
 export type SideBarProps = {
     items: SideBarItemProps[];
+    open: boolean;
+    onClose: () => void;
 };

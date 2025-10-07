@@ -39,3 +39,15 @@ export const HTML_FONT_SIZE = 10;
  * @constant
  */
 export const SCALING_FACTOR = 4;
+
+/**
+ * Width for Sidebar in mobile
+ * @constant
+ */
+export const SIDEBAR_WIDTH_MOBILE = 300;
+
+/**
+ * Width for sidebar in desktop
+ * @constant
+ */
+export const SIDEBAR_WIDTH_DESKTOP = 250;

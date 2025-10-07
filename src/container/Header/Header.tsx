@@ -11,8 +11,9 @@ import { useDataContext } from '@context';
 import type { Product } from '@mocks';
 
 import { HeaderBox } from './Header.style';
+import { HeaderProps } from './Header.type';
 
-export const Header = () => {
+export const Header = ({ onMenuClick }: HeaderProps) => {
     const theme = useTheme();
     const navigate = useNavigate();
     const isMedium = useMediaQuery(theme.breakpoints.up('md'));
@@ -58,7 +59,11 @@ export const Header = () => {
                     />
                 </Stack>
             ) : (
-                <IconButton size="large" aria-label="Open Menu">
+                <IconButton
+                    size="large"
+                    aria-label="Open Menu"
+                    onClick={onMenuClick}
+                >
                     <MenuIcon />
                 </IconButton>
             )}

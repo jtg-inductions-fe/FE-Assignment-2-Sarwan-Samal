@@ -2,9 +2,9 @@ import OverviewIcon from '@assets/icons/chart-pie.svg?react';
 import DocsIcon from '@assets/icons/clipboard-list.svg?react';
 import ComponentsIcon from '@assets/icons/collection.svg?react';
 import PagesIcon from '@assets/icons/document-report.svg?react';
+import MessagesIcon from '@assets/icons/inbox-in.svg?react';
 import AuthenticationIcon from '@assets/icons/lock-closed.svg?react';
 import SalesIcon from '@assets/icons/shopping-bag.svg?react';
-import MessagesIcon from '@assets/icons/shopping-bag.svg?react';
 import HelpIcon from '@assets/icons/support.svg?react';
 import { SideBarItemProps } from '@container';
 

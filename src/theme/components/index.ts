@@ -30,8 +30,8 @@ export const components: Components = {
     MuiIconButton: {
         styleOverrides: {
             sizeSmall: {
-                width: 28,
-                height: 28,
+                width: 24,
+                height: 24,
             },
             sizeMedium: {
                 width: 32,
