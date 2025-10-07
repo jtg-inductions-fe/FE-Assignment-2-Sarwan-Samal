@@ -41,13 +41,31 @@ export const HTML_FONT_SIZE = 10;
 export const SCALING_FACTOR = 4;
 
 /**
- * Width for Sidebar in mobile
+ * Height for header in mobile.
+ * @constant
+ */
+export const HEADER_HEIGHT_MOBILE = 64;
+
+/**
+ * Height for header in mobile.
+ * @constant
+ */
+export const HEADER_HEIGHT_DESKTOP = 70;
+
+/**
+ * Width for sidebar in mobile.
  * @constant
  */
 export const SIDEBAR_WIDTH_MOBILE = 300;
 
 /**
- * Width for sidebar in desktop
+ * Width for sidebar in desktop.
  * @constant
  */
 export const SIDEBAR_WIDTH_DESKTOP = 250;
+
+/**
+ * Separates main navigation from separate items.
+ * @constant
+ */
+export const DIVIDER_AFTER_INDEX = 4;

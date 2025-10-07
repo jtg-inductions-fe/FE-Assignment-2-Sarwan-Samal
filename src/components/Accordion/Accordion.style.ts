@@ -31,8 +31,10 @@ export const StyledAccordionSummary = styled(AccordionSummary)(
     }),
 );
 
-export const StyledAccordionDetails = styled(AccordionDetails)(() => ({
-    display: 'flex',
-    flexDirection: 'column',
-    gap: 10,
-}));
+export const StyledAccordionDetails = styled(AccordionDetails)(
+    ({ theme: { spacing } }) => ({
+        display: 'flex',
+        flexDirection: 'column',
+        gap: spacing(2.5),
+    }),
+);

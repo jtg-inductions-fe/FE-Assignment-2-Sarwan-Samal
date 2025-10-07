@@ -14,8 +14,9 @@ export const NavItem = ({
     chipValue,
     chipSize = 'small',
     chipColor = 'warning',
+    ...rest
 }: NavItemProps) => (
-    <StyledNavItem component={NavLink} to={to}>
+    <StyledNavItem component={NavLink} to={to} {...rest}>
         <Box
             display="flex"
             alignItems="center"

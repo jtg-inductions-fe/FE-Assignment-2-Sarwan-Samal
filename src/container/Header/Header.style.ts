@@ -1,7 +1,8 @@
 import { Box, styled } from '@mui/material';
+
+import { HEADER_HEIGHT_DESKTOP, HEADER_HEIGHT_MOBILE } from '@constant';
 export const HeaderBox = styled(Box)(
     ({ theme: { palette, spacing, breakpoints } }) => ({
-        zIndex: 1201,
         backgroundColor: palette.background.paper,
         padding: spacing(4),
         borderBottom: `1px solid ${palette.divider}`,
@@ -9,9 +10,9 @@ export const HeaderBox = styled(Box)(
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
-        minHeight: spacing(16),
+        height: `${HEADER_HEIGHT_MOBILE}px`,
         [breakpoints.up('md')]: {
-            minHeight: spacing(17.25),
+            height: `${HEADER_HEIGHT_DESKTOP}px`,
         },
     }),
 );

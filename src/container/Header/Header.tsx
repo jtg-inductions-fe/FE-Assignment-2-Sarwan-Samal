@@ -7,6 +7,7 @@ import NotificationsIcon from '@assets/icons/Bell.svg?react';
 import MenuIcon from '@assets/icons/menu.svg?react';
 import { Avatar, IconButton, Logo, SearchBar } from '@components';
 import { LOGO } from '@constant';
+import { ROUTES } from '@constant';
 import { useDataContext } from '@context';
 import type { Product } from '@mocks';
 
@@ -33,7 +34,7 @@ export const Header = ({ onMenuClick }: HeaderProps) => {
         navigate: nav,
     }: HandleSearchProps) => {
         const val = typeof value === 'string' ? value.trim() : '';
-        if (!val) void nav('/');
+        if (!val) void nav(ROUTES.HOME);
         const currProd = Products.find((product) => product.title === val);
         if (currProd) void nav(currProd.to);
         else void nav(val);
@@ -43,7 +44,7 @@ export const Header = ({ onMenuClick }: HeaderProps) => {
         <HeaderBox>
             {isMedium ? (
                 <Stack direction="row" gap={8} alignItems="center">
-                    <Logo src={LOGO} to="/" alt="Logo"></Logo>
+                    <Logo src={LOGO} to={ROUTES.HOME} alt="Logo"></Logo>
                     <SearchBar
                         placeholder="Search"
                         options={productList}
@@ -73,7 +74,7 @@ export const Header = ({ onMenuClick }: HeaderProps) => {
                     size="medium"
                     hasBoxShadow={isMedium}
                     isRounded={isMedium}
-                    onClick={() => void navigate('/notfications')}
+                    onClick={() => void navigate(ROUTES.NOTIFICATIONS)}
                     icon={NotificationsIcon}
                 />
                 <IconButton size="medium" isRounded hasBoxShadow={isMedium}>

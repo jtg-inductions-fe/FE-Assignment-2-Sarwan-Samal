@@ -1,2 +1,2 @@
 export { Sidebar } from './Sidebar';
-export type { SideBarItemProps, SideBarChildProps } from './Sidebar.type';
+export type { SidebarItemProps, SidebarChildProps } from './Sidebar.type';

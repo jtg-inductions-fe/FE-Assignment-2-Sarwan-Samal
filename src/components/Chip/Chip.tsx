@@ -7,10 +7,10 @@ export const Chip = ({ color, label, ...props }: ChipProps) => (
         label={label}
         size="small"
         variant="filled"
-        {...props}
         sx={(theme) => ({
             backgroundColor: theme.palette[color]?.light,
             color: theme.palette[color]?.main,
         })}
+        {...props}
     />
 );

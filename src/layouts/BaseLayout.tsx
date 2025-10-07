@@ -1,4 +1,4 @@
-import { Children, useState } from 'react';
+import { useState } from 'react';
 
 import { Outlet } from 'react-router';
 
@@ -9,20 +9,20 @@ import { useDataContext } from '@context';
 export const BaseLayout = () => {
     const { sidebarData } = useDataContext();
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-    const toggleSidebar = () => () => {
+    const toggleSidebar = () => {
         setIsSidebarOpen((prev) => !prev);
     };
     return (
         <>
-            <Header onMenuClick={toggleSidebar()} />
+            <Header onMenuClick={toggleSidebar} />
             <Stack direction="row">
                 <Sidebar
                     items={sidebarData}
                     open={isSidebarOpen}
-                    onClose={toggleSidebar()}
+                    onClose={toggleSidebar}
                 />
                 <Box component="main" maxWidth={1600} mx="auto">
-                    {Children && <Outlet />}
+                    <Outlet />
                 </Box>
             </Stack>
         </>

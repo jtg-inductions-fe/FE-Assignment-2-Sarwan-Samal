@@ -1,18 +1,18 @@
-export type SideBarChildProps = {
+export type SidebarChildProps = {
     label: string;
     to: string;
 };
 
-export type SideBarItemProps = {
+export type SidebarItemProps = {
     icon: React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
     label: string;
     to?: string;
     notificationCount?: number;
-    children?: SideBarChildProps[];
+    children?: SidebarChildProps[];
 };
 
 export type SideBarProps = {
-    items: SideBarItemProps[];
+    items: SidebarItemProps[];
     open: boolean;
     onClose: () => void;
 };

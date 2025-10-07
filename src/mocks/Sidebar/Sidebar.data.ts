@@ -6,13 +6,14 @@ import MessagesIcon from '@assets/icons/inbox-in.svg?react';
 import AuthenticationIcon from '@assets/icons/lock-closed.svg?react';
 import SalesIcon from '@assets/icons/shopping-bag.svg?react';
 import HelpIcon from '@assets/icons/support.svg?react';
-import { SideBarItemProps } from '@container';
+import { ROUTES } from '@constant';
+import { SidebarItemProps } from '@container';
 
-export const SidebarData: SideBarItemProps[] = [
+export const SidebarData: SidebarItemProps[] = [
     {
         icon: OverviewIcon,
         label: 'Overview',
-        to: '/overview',
+        to: ROUTES.OVERVIEW,
     },
     {
         icon: PagesIcon,
@@ -20,15 +21,15 @@ export const SidebarData: SideBarItemProps[] = [
         children: [
             {
                 label: 'About',
-                to: '/about',
+                to: ROUTES.ABOUT,
             },
             {
                 label: 'Discover',
-                to: '/discover',
+                to: ROUTES.DISCOVER,
             },
             {
                 label: 'Sales',
-                to: '/sales',
+                to: ROUTES.SALES,
             },
         ],
     },
@@ -38,22 +39,22 @@ export const SidebarData: SideBarItemProps[] = [
         children: [
             {
                 label: 'Product List',
-                to: '/product-list',
+                to: ROUTES.PRODUCT_LIST,
             },
             {
                 label: 'Billing',
-                to: '/billing',
+                to: ROUTES.BILLING,
             },
             {
                 label: 'Invoice',
-                to: '/invoice',
+                to: ROUTES.INVOICE,
             },
         ],
     },
     {
         icon: MessagesIcon,
         label: 'Messages',
-        to: '/messages',
+        to: ROUTES.MESSAGES,
         notificationCount: 1,
     },
     {
@@ -62,27 +63,27 @@ export const SidebarData: SideBarItemProps[] = [
         children: [
             {
                 label: 'Login',
-                to: 'login',
+                to: ROUTES.LOGIN,
             },
             {
                 label: 'Signup',
-                to: '/signup',
+                to: ROUTES.SIGNUP,
             },
         ],
     },
     {
         icon: DocsIcon,
         label: 'Docs',
-        to: '/docs',
+        to: ROUTES.DOCS,
     },
     {
         icon: ComponentsIcon,
         label: 'Components',
-        to: '/components',
+        to: ROUTES.COMPONENTS,
     },
     {
         icon: HelpIcon,
         label: 'Help',
-        to: '/help',
+        to: ROUTES.HELP,
     },
 ];

@@ -24,8 +24,12 @@ export const Accordion = ({
             </Typography>
         </StyledAccordionSummary>
         <StyledAccordionDetails>
-            {items.map((item, index) => (
-                <NavItem key={index} label={item.label} to={item.to} />
+            {items.map((item) => (
+                <NavItem
+                    key={item.to || item.label}
+                    label={item.label}
+                    to={item.to}
+                />
             ))}
         </StyledAccordionDetails>
     </StyledAccordion>

@@ -8,6 +8,7 @@ import AdjustmentIcon from '@assets/icons/adjustments.svg?react';
 import CogIcon from '@assets/icons/cog.svg?react';
 import GlobeIcon from '@assets/icons/globe.svg?react';
 import { Accordion, IconButton, NavItem } from '@components';
+import { DIVIDER_AFTER_INDEX, ROUTES } from '@constant';
 import { theme } from '@theme';
 
 import { SidebarWrapper, StyledDrawer } from './Sidebar.style';
@@ -17,7 +18,7 @@ export const Sidebar = ({ items, open, onClose }: SideBarProps) => {
     const navigate = useNavigate();
     const isMedium = useMediaQuery(theme.breakpoints.up('md'));
     const location = useLocation();
-    const showSidebar = location.pathname === '/';
+    const showSidebar = location.pathname === ROUTES.HOME;
     const renderSidebarItems = (
         <SidebarWrapper>
             <Stack gap={5}>
@@ -37,7 +38,7 @@ export const Sidebar = ({ items, open, onClose }: SideBarProps) => {
                                 chipValue={item.notificationCount?.toString()}
                             />
                         )}
-                        {index == 4 && <Divider />}
+                        {index == DIVIDER_AFTER_INDEX && <Divider />}
                     </React.Fragment>
                 ))}
             </Stack>
@@ -45,19 +46,19 @@ export const Sidebar = ({ items, open, onClose }: SideBarProps) => {
                 <IconButton
                     icon={AdjustmentIcon}
                     size="small"
-                    onClick={() => void navigate('/adjustments')}
-                    aria-label="Adjustement"
+                    onClick={() => void navigate(ROUTES.ADJUSTMENTS)}
+                    aria-label="Adjustment"
                 />
                 <IconButton
                     icon={GlobeIcon}
                     size="small"
-                    onClick={() => void navigate('/globe')}
+                    onClick={() => void navigate(ROUTES.GLOBE)}
                     aria-label="Globe"
                 />
                 <IconButton
                     icon={CogIcon}
                     size="small"
-                    onClick={() => void navigate('/cog')}
+                    onClick={() => void navigate(ROUTES.COG)}
                     aria-label="Cog"
                 />
             </Stack>
