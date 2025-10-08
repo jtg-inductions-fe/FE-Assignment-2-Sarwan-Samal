@@ -14,10 +14,14 @@ export const Accordion = ({
     label,
     icon: Icon,
     items = [],
+    handleClose,
     ...props
 }: AccordionProps) => (
     <StyledAccordion elevation={0} {...props} disableGutters>
-        <StyledAccordionSummary expandIcon={<ExpandMoreIcon />}>
+        <StyledAccordionSummary
+            expandIcon={<ExpandMoreIcon />}
+            onClick={(e) => e.stopPropagation()}
+        >
             {Icon && <Icon />}
             <Typography variant="subtitle1" fontWeight={500}>
                 {label}
@@ -29,6 +33,7 @@ export const Accordion = ({
                     key={item.to || item.label}
                     label={item.label}
                     to={item.to}
+                    onClick={handleClose}
                 />
             ))}
         </StyledAccordionDetails>

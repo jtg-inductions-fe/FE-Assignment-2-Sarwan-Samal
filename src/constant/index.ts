@@ -15,5 +15,5 @@ export {
     mainAvatar,
     USER_AVATAR,
     GRID_IMAGES,
-} from '../assets/images/imageConstants';
+} from './imageConstants';
 export { ROUTES } from './routeConstant';
