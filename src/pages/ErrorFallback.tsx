@@ -1,10 +1,10 @@
 import { useNavigate } from 'react-router-dom';
 
-import { Error } from '@components';
-import { WRONG_PAGE } from '@constant';
-import { ROUTES } from '@constant';
+import { ErrorComponent } from '@components';
+import { ERROR_MESSAGES, ROUTES, WRONG_PAGE } from '@constant';
 
 type FallbackProps = {
+    error: Error;
     resetError: () => void;
 };
 
@@ -15,14 +15,14 @@ export const ErrorFallback = ({ resetError }: FallbackProps) => {
         void navigate(ROUTES.HOME);
     };
     return (
-        <Error
+        <ErrorComponent
             img={WRONG_PAGE}
-            title="Something has gone seriously wrong"
-            description="It’s always time for a coffee break We should be back by the time you finish your coffee."
+            title={ERROR_MESSAGES.WRONG_PAGE.title}
+            description={ERROR_MESSAGES.WRONG_PAGE.description}
             buttonConfig={{
                 onClick: handleRedirect,
                 children: 'Go back home',
             }}
-        ></Error>
+        ></ErrorComponent>
     );
 };

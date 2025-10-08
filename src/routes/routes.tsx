@@ -14,10 +14,14 @@ export const routes: RouteObject[] = [
                 index: true,
                 Component: Home,
             },
-            {
-                path: 'error-boundary',
-                element: <CustomError />,
-            },
+            ...(import.meta.env.DEV
+                ? [
+                      {
+                          path: 'error-boundary',
+                          element: <CustomError />,
+                      },
+                  ]
+                : []),
             {
                 path: ROUTES.NOT_FOUND,
                 Component: PageNotFound,

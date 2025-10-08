@@ -17,3 +17,4 @@ export {
     GRID_IMAGES,
 } from './imageConstants';
 export { ROUTES } from './routeConstant';
+export { ERROR_MESSAGES } from './errorMessages';

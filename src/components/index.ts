@@ -6,5 +6,5 @@ export { Chip } from './Chip';
 export { NavItem } from './NavItem';
 export { Accordion } from './Accordion';
 export { Button } from './Button';
-export { Error } from './Error';
+export { ErrorComponent } from './Error';
 export { CustomErrorBoundary, CustomError } from './ErrorBoundary';

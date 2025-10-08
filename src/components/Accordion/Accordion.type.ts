@@ -10,4 +10,4 @@ export type AccordionProps = {
     icon: React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
     items?: AccordionItem[];
     handleClose?: () => void;
-} & Omit<MuiAccordionProps, 'children'> & { onClick?: () => void };
+} & Omit<MuiAccordionProps, 'children'>;

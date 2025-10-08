@@ -1,11 +1,11 @@
-import { Stack, Typography, useMediaQuery } from '@mui/material';
+import { Box, Stack, Typography, useMediaQuery } from '@mui/material';
 
 import { Button } from '@components';
 import { theme } from '@theme';
 
 import { ErrorProps } from './Error.type';
 
-export const Error = ({
+export const ErrorComponent = ({
     img,
     title,
     description,
@@ -14,7 +14,12 @@ export const Error = ({
     const isMedium = useMediaQuery(theme.breakpoints.up('md'));
     return (
         <Stack alignItems="center" px={3} height="100%" justifyContent="center">
-            <img src={img} alt={title} width={isMedium ? '60%' : '90%'} />
+            <Box
+                component="img"
+                src={img}
+                alt={title}
+                sx={{ width: isMedium ? '60%' : '90%' }}
+            />
             <Stack alignItems="center" gap={8}>
                 <Stack gap={3}>
                     <Typography variant="h1" textAlign="center">

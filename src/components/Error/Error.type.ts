@@ -4,5 +4,8 @@ export type ErrorProps = {
     img: string;
     title: string;
     description: string;
-    buttonConfig: ButtonProps;
+    buttonConfig: Pick<
+        ButtonProps,
+        'variant' | 'color' | 'href' | 'onClick' | 'disabled' | 'children'
+    >;
 };

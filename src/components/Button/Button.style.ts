@@ -7,5 +7,11 @@ export const StyledButton = styled(Button)(
         padding: spacing(2, 4),
         borderRadius: spacing(3),
         width: 'fit-content',
+        '&:hover': {
+            backgroundColor: palette.success.dark,
+        },
+        '&:active': {
+            backgroundColor: palette.success.light,
+        },
     }),
 );

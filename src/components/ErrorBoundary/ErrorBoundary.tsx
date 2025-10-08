@@ -13,15 +13,23 @@ export class CustomErrorBoundary extends Component<
         this.state = {
             hasError: false,
             error: null,
+            errorKey: 0,
         };
     }
 
     resetError = () => {
-        this.setState({ hasError: false, error: null });
+        this.setState((prev) => ({
+            hasError: false,
+            error: null,
+            errorKey: prev.errorKey + 1,
+        }));
     };
 
-    static getDerivedStateFromError(error: Error): ErrorBoundaryState {
-        return { hasError: true, error: error };
+    static getDerivedStateFromError(
+        error: Error,
+        errorKey: number,
+    ): ErrorBoundaryState {
+        return { hasError: true, error: error, errorKey: errorKey };
     }
 
     render() {
@@ -35,6 +43,6 @@ export class CustomErrorBoundary extends Component<
             );
         }
 
-        return this.props.children;
+        return <div key={this.state.errorKey}>{this.props.children}</div>;
     }
 }
