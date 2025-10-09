@@ -18,14 +18,14 @@ export const ImageGrid = () => (
             >
                 <StyledImage
                     component="img"
-                    src={GRID_IMAGES[1]}
+                    src={GRID_IMAGES[0]}
                     alt="Grid Image-1"
                 />
             </Grid>
             <Grid size={{ xs: 12, sm: 6 }}>
                 <StyledImage
                     component="img"
-                    src={GRID_IMAGES[3]}
+                    src={GRID_IMAGES[1]}
                     alt="Grid Image-2"
                 />
             </Grid>
@@ -40,7 +40,7 @@ export const ImageGrid = () => (
         <Grid size={{ xs: 12, sm: 4 }}>
             <StyledImage
                 component="img"
-                src={GRID_IMAGES[0]}
+                src={GRID_IMAGES[3]}
                 alt="Grid Image-4"
             />
         </Grid>
