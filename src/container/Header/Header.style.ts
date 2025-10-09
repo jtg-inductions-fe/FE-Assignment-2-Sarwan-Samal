@@ -11,6 +11,8 @@ export const HeaderBox = styled(Box)(
         justifyContent: 'space-between',
         alignItems: 'center',
         height: `${HEADER_HEIGHT_MOBILE}px`,
+        position: 'sticky',
+        top: 0,
         [breakpoints.up('md')]: {
             height: `${HEADER_HEIGHT_DESKTOP}px`,
         },

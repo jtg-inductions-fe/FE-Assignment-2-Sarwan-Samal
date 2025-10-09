@@ -14,7 +14,7 @@ export const BaseLayout = () => {
         setIsSidebarOpen((prev) => !prev);
     };
     return (
-        <>
+        <Box height="100vh" display="flex" flexDirection="column">
             <Header onMenuClick={toggleSidebar} />
             <CustomErrorBoundary>
                 <Stack direction="row">
@@ -28,6 +28,6 @@ export const BaseLayout = () => {
                     </Box>
                 </Stack>
             </CustomErrorBoundary>
-        </>
+        </Box>
     );
 };

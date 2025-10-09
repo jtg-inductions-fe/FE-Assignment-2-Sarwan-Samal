@@ -17,6 +17,8 @@ export const SidebarWrapper = styled(Box)(
         height: `calc(100vh - ${HEADER_HEIGHT_MOBILE}px)`,
         width: `${SIDEBAR_WIDTH_MOBILE}px`,
         [breakpoints.up('md')]: {
+            position: 'sticky',
+            top: `${HEADER_HEIGHT_DESKTOP}px`,
             width: `${SIDEBAR_WIDTH_DESKTOP}px`,
             height: `calc(100vh - ${HEADER_HEIGHT_DESKTOP}px)`,
         },
