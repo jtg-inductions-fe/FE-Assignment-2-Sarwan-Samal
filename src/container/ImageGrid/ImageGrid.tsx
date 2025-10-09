@@ -16,17 +16,33 @@ export const ImageGrid = () => (
                 size={{ xs: 12, sm: 6 }}
                 sx={{ display: { xs: 'none', sm: 'block' } }}
             >
-                <StyledImage component="img" src={GRID_IMAGES[1]} />
+                <StyledImage
+                    component="img"
+                    src={GRID_IMAGES[1]}
+                    alt="Grid Image-1"
+                />
             </Grid>
             <Grid size={{ xs: 12, sm: 6 }}>
-                <StyledImage component="img" src={GRID_IMAGES[3]} />
+                <StyledImage
+                    component="img"
+                    src={GRID_IMAGES[3]}
+                    alt="Grid Image-2"
+                />
             </Grid>
             <Grid size={12}>
-                <StyledImage component="img" src={GRID_IMAGES[2]} />
+                <StyledImage
+                    component="img"
+                    src={GRID_IMAGES[2]}
+                    alt="Grid Image-3"
+                />
             </Grid>
         </Grid>
         <Grid size={{ xs: 12, sm: 4 }}>
-            <StyledImage component="img" src={GRID_IMAGES[0]} />
+            <StyledImage
+                component="img"
+                src={GRID_IMAGES[0]}
+                alt="Grid Image-4"
+            />
         </Grid>
     </Grid>
 );

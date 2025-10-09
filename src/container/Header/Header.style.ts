@@ -13,6 +13,7 @@ export const HeaderBox = styled(Box)(
         height: `${HEADER_HEIGHT_MOBILE}px`,
         position: 'sticky',
         top: 0,
+        zIndex: 1,
         [breakpoints.up('md')]: {
             height: `${HEADER_HEIGHT_DESKTOP}px`,
         },
