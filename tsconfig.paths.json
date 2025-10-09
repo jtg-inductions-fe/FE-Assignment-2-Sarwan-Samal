@@ -7,7 +7,11 @@
             "@theme": ["theme/index"],
             "@layouts": ["layouts"],
             "@routes": ["routes"],
-            "@pages": ["pages"]
+            "@pages": ["pages"],
+            "@container": ["container"],
+            "@components": ["components"],
+            "@mocks": ["mocks"],
+            "@context": ["context"]
         }
     }
 }
