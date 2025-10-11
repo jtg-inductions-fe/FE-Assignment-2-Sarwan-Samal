@@ -36,7 +36,7 @@ export const CustomerData: Customer[] = [
     {
         avatar: USER_AVATAR[5],
         name: 'Karen Nelson',
-        email: 'thomas@example.com',
+        email: 'karen@example.com',
         amount: 1367,
     },
 ] satisfies Customer[];
