@@ -10,6 +10,6 @@ type PayloadItem = {
 
 export type TooltipProps = {
     active?: boolean;
-    payload?: PayloadItem[] | undefined;
+    payload?: PayloadItem[];
     label?: Date;
 };

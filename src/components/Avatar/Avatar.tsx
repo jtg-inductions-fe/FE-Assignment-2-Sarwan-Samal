@@ -8,6 +8,7 @@ export const Avatar = ({
     src,
     size,
     hasBoxShadow,
+    hasPopover = false,
     popoverName,
     popoverEmail,
     ...rest
@@ -26,7 +27,8 @@ export const Avatar = ({
                 src={src}
                 size={size}
                 hasBoxShadow={hasBoxShadow}
-                onClick={handlePopoverClick}
+                onClick={hasPopover ? handlePopoverClick : undefined}
+                tabIndex={-1}
                 {...rest}
             />
             <Popover

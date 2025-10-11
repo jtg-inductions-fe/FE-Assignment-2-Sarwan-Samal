@@ -1,4 +1,3 @@
-import { Tooltip as CustomTooltip } from 'components/Tooltip';
 import {
     CartesianGrid,
     Line,
@@ -11,6 +10,7 @@ import {
 
 import { useMediaQuery } from '@mui/material';
 
+import { Tooltip as CustomTooltip } from '@components';
 import { theme } from '@theme';
 
 import { ChartProps } from './Chart.type';
@@ -79,7 +79,7 @@ export const Chart = ({
                     tickLine={false}
                     dx={-20}
                     tick={tickStyle}
-                    hide={isMedium ? false : true}
+                    hide={!isMedium}
                 />
                 <Tooltip
                     content={<CustomTooltip />}

@@ -82,6 +82,7 @@ export const Header = ({ onMenuClick }: HeaderProps) => {
                         src={user.image}
                         size="medium"
                         alt="User Avatar"
+                        hasPopover={true}
                         popoverName={user.name}
                         popoverEmail={user.email}
                     />

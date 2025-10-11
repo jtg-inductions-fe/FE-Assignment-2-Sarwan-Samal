@@ -1,8 +1,7 @@
 import { useMediaQuery } from '@mui/material';
 
 import ExclamationIcon from '@assets/icons/exclamation-circle.svg?react';
-import { Card } from '@components';
-import { Chart } from '@components';
+import { Card, Chart } from '@components';
 import { useDataContext } from '@context';
 import { theme } from '@theme';
 
@@ -30,7 +29,8 @@ export const Sales = () => {
      * @returns - sales value converted with k
      * @description - e.g- 100000 returns 100k
      */
-    const salesAmountFormatter = (sales: number) => `${sales / 1000}k`;
+    const salesAmountFormatter = (sales: number) =>
+        `${Math.round(sales / 1000)}k`;
 
     return (
         <Card

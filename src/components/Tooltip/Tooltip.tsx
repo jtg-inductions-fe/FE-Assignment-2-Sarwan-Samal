@@ -7,7 +7,7 @@ export const Tooltip = ({ active, payload, label }: TooltipProps) => {
      *
      * @param date - Date object to format
      * @returns - Formatted string according to the design
-     * @description- e.g- for input new Date(2025, 03, 01) return Apr,2 2025
+     * @description- e.g- for input new Date(2025, 03, 01) return Apr 2, 2025
      */
     const labelDateFormatter = (date: Date | undefined): string => {
         const options = {
@@ -17,7 +17,7 @@ export const Tooltip = ({ active, payload, label }: TooltipProps) => {
         } as const;
         return new Intl.DateTimeFormat('en-US', options).format(date);
     };
-    if (active && payload) {
+    if (active && payload && payload.length > 0) {
         const labelledDate = labelDateFormatter(label);
         const sales = Number(payload[0].value);
         return (

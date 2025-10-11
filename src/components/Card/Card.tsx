@@ -1,7 +1,6 @@
-import { IconButton } from 'components/IconButton';
-
 import { Box, Stack, Typography } from '@mui/material';
 
+import { IconButton } from '@components';
 import { theme } from '@theme';
 
 import { StyledCard } from './Card.style';
@@ -17,14 +16,24 @@ export const Card = ({
     <StyledCard size={size}>
         <Box>
             <Stack direction="row" alignItems="center" spacing={2.5}>
-                <Typography variant="h2" color={theme.palette.text.primary}>
-                    {heading}
-                </Typography>
-                {icon && <IconButton icon={icon} size="small" />}
+                {heading && (
+                    <Typography variant="h2" color={theme.palette.text.primary}>
+                        {heading}
+                    </Typography>
+                )}
+                {icon && (
+                    <IconButton
+                        icon={icon}
+                        size="small"
+                        aria-label="Chart Info"
+                    />
+                )}
             </Stack>
-            <Typography variant="h3" color={theme.palette.text.secondary}>
-                {subHeading}
-            </Typography>
+            {subHeading && (
+                <Typography variant="h3" color={theme.palette.text.secondary}>
+                    {subHeading}
+                </Typography>
+            )}
         </Box>
         {children}
     </StyledCard>
