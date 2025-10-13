@@ -2,16 +2,22 @@ import React, { useEffect, useState } from 'react';
 
 import { ListItemProp } from 'components/ListItem/ListItem.type';
 
-import { Divider, Stack, Typography, useMediaQuery } from '@mui/material';
+import {
+    Divider,
+    Stack,
+    Typography,
+    useMediaQuery,
+    useTheme,
+} from '@mui/material';
 
 import { Card } from '@components';
 import { ListItem } from '@components';
 import { useDataContext } from '@context';
-import { theme } from '@theme';
 
 export const LatestCustomer = () => {
     const [customer, setCustomer] = useState<ListItemProp[]>([]);
     const { customerData } = useDataContext();
+    const theme = useTheme();
     const isMedium = useMediaQuery(theme.breakpoints.up('md'));
 
     useEffect(() => {
