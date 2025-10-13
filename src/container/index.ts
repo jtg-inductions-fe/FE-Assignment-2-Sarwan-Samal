@@ -5,3 +5,4 @@ export { ImageGrid } from './ImageGrid';
 export { Sales } from './Sales';
 export { LatestCustomer } from './LatestCustomer';
 export { TopProducts } from './TopProducts';
+export { Transactions } from './Transactions';

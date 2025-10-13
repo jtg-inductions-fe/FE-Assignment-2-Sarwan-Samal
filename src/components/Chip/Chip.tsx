@@ -10,6 +10,7 @@ export const Chip = ({ color, label, ...props }: ChipProps) => (
         sx={(theme) => ({
             backgroundColor: theme.palette[color]?.light,
             color: theme.palette[color]?.main,
+            ...theme.typography.subtitle2,
         })}
         {...props}
     />

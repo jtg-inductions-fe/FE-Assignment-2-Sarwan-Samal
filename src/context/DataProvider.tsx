@@ -5,6 +5,7 @@ import {
     ProductData,
     SalesData,
     SidebarData,
+    TransactionData,
     UserData,
 } from '@mocks';
 
@@ -18,6 +19,7 @@ export const DataProvider = ({ children }: { children: ReactNode }) => (
             sidebarData: SidebarData,
             salesData: SalesData,
             customerData: CustomerData,
+            transactionData: TransactionData,
         }}
     >
         {children}
