@@ -1,6 +1,4 @@
-import React, { useEffect, useState } from 'react';
-
-import { ListItemProp } from 'components/ListItem/ListItem.type';
+import React from 'react';
 
 import {
     Divider,
@@ -13,29 +11,26 @@ import {
 import { Card } from '@components';
 import { ListItem } from '@components';
 import { useDataContext } from '@context';
+import { useListContainer } from '@hooks';
 
 export const LatestCustomer = () => {
-    const [customer, setCustomer] = useState<ListItemProp[]>([]);
     const { customerData } = useDataContext();
     const theme = useTheme();
     const isMedium = useMediaQuery(theme.breakpoints.up('md'));
+    const latestCustomer = useListContainer(customerData, (item) => ({
+        avatar: item.avatar,
+        title: item.name,
+        subtitle: item.email,
+        primaryValue: `$${item.amount}`,
+    }));
 
-    useEffect(() => {
-        const customerList: ListItemProp[] = customerData.map((item) => ({
-            avatar: item.avatar,
-            title: item.name,
-            subtitle: item.email,
-            primaryValue: `$${item.amount}`,
-        }));
-        setCustomer(customerList);
-    }, [customerData]);
     return (
         <Card size={isMedium ? 'md' : 'sm'} heading="Latest Customer">
-            {customer.length !== 0 ? (
-                customer.map((item, index) => (
-                    <React.Fragment key={index}>
+            {latestCustomer.length !== 0 ? (
+                latestCustomer.map((item, index) => (
+                    <React.Fragment key={index || item.title}>
                         <ListItem {...item} />
-                        {index !== customer.length - 1 && <Divider />}
+                        {index !== latestCustomer.length - 1 && <Divider />}
                     </React.Fragment>
                 ))
             ) : (

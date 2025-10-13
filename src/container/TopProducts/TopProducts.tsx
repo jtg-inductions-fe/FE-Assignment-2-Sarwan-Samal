@@ -1,6 +1,4 @@
-import React, { useEffect, useState } from 'react';
-
-import { ListItemProp } from 'components/ListItem/ListItem.type';
+import React from 'react';
 
 import {
     Divider,
@@ -12,26 +10,23 @@ import {
 
 import { Card, ListItem } from '@components';
 import { useDataContext } from '@context';
+import { useListContainer } from '@hooks';
 
 export const TopProducts = () => {
-    const [topProducts, setTopProducts] = useState<ListItemProp[]>([]);
     const { products } = useDataContext();
     const theme = useTheme();
     const isMedium = useMediaQuery(theme.breakpoints.up('md'));
-    useEffect(() => {
-        const topProductsList: ListItemProp[] = products.map((item) => ({
-            title: item.title,
-            subtitle: item.framework,
-            primaryValue: item.sales.toString(),
-            secondaryValue: 'Sales',
-        }));
-        setTopProducts(topProductsList);
-    }, [products]);
+    const topProducts = useListContainer(products, (item) => ({
+        title: item.title,
+        subtitle: item.framework,
+        primaryValue: item.sales.toString(),
+        secondaryValue: 'Sales',
+    }));
     return (
         <Card size={isMedium ? 'md' : 'sm'} heading="Top Products">
             {topProducts.length !== 0 ? (
                 topProducts.map((item, index) => (
-                    <React.Fragment key={index}>
+                    <React.Fragment key={index || item.title}>
                         <ListItem {...item} />
                         {index !== topProducts.length - 1 && <Divider />}
                     </React.Fragment>
