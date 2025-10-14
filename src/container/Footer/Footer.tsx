@@ -1,5 +1,4 @@
-import { Stack, Typography } from '@mui/material';
-import { useTheme } from '@mui/material';
+import { Stack, Typography, useTheme } from '@mui/material';
 
 import DribbleIcon from '@assets/icons/dribbble.svg?react';
 import FacebookIcon from '@assets/icons/facebook.svg?react';
@@ -12,6 +11,21 @@ import { StyledBox } from './Footer.style';
 
 export const Footer = () => {
     const theme = useTheme();
+    const footerSocialLinks = [
+        {
+            icon: FacebookIcon,
+            url: 'https://www.facebook.com',
+            label: 'Facebook',
+        },
+        { icon: TwitterIcon, url: 'https://x.com/', label: 'Twitter' },
+        { icon: GithubIcon, url: 'https://www.github.com', label: 'Github' },
+        {
+            icon: DribbleIcon,
+            url: 'https://www.dribbble.com',
+            label: 'Dribbble',
+        },
+    ];
+
     return (
         <Card size="xl">
             <StyledBox>
@@ -23,54 +37,22 @@ export const Footer = () => {
                     &copy; 2021 Themesberg, LLC. All rights reserved.
                 </Typography>
                 <Stack direction="row" gap={6}>
-                    <IconButton
-                        icon={FacebookIcon}
-                        isRounded={true}
-                        onClick={() =>
-                            window.open(
-                                'https://www.facebook.com',
-                                '_blank',
-                                'noopener,noreferrer',
-                            )
-                        }
-                        aria-label="Facebook"
-                    ></IconButton>
-                    <IconButton
-                        icon={TwitterIcon}
-                        isRounded={true}
-                        onClick={() =>
-                            window.open(
-                                'https://x.com/',
-                                '_blank',
-                                'noopener,noreferrer',
-                            )
-                        }
-                        aria-label="Twitter"
-                    ></IconButton>
-                    <IconButton
-                        icon={GithubIcon}
-                        isRounded={true}
-                        onClick={() =>
-                            window.open(
-                                'https://www.github.com',
-                                '_blank',
-                                'noopener,noreferrer',
-                            )
-                        }
-                        aria-label="Github"
-                    ></IconButton>
-                    <IconButton
-                        icon={DribbleIcon}
-                        isRounded={true}
-                        onClick={() =>
-                            window.open(
-                                'https://www.dribbble.com',
-                                '_blank',
-                                'noopener,noreferrer',
-                            )
-                        }
-                        aria-label="Dribbble"
-                    ></IconButton>
+                    {footerSocialLinks.map((item) => (
+                        <IconButton
+                            key={item.label}
+                            icon={item.icon}
+                            size="medium"
+                            isRounded={true}
+                            onClick={() =>
+                                window.open(
+                                    item.url,
+                                    '_blank',
+                                    'noopener,noreferrer',
+                                )
+                            }
+                            aria-label={item.label}
+                        ></IconButton>
+                    ))}
                 </Stack>
             </StyledBox>
         </Card>

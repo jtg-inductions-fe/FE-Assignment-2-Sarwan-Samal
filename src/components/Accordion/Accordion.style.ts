@@ -5,7 +5,8 @@ import {
     styled,
 } from '@mui/material';
 
-export const StyledAccordion = styled(Accordion)(() => ({
+export const StyledAccordion = styled(Accordion)(({ theme: { spacing } }) => ({
+    borderRadius: spacing(3),
     '&::before': {
         display: 'none',
     },
