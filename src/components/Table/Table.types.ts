@@ -1,12 +1,15 @@
+import { ChipProps } from 'components/Chip/Chip.type';
+
+export type PaymentStatus = 'completed' | 'in-progress' | 'cancelled';
+export type PaymentType = 'credit' | 'debit';
 export type TableRowProps = {
     name: string;
     statement: string;
     date: Date;
     amount: string;
-    status: 'completed' | 'in-progress' | 'cancelled';
-    type: 'debit' | 'credit';
+    status: PaymentStatus;
+    type: PaymentType;
 };
-type PaymentStatus = 'completed' | 'in-progress' | 'cancelled';
 
 export type TableProps = {
     headingRow: {
@@ -21,14 +24,5 @@ export type TableProps = {
     }[];
     rowData: TableRowProps[];
     tableDateFormatter: (date: Date) => string;
-    chipFormatter: (status: PaymentStatus) => {
-        label: string;
-        color:
-            | 'success'
-            | 'info'
-            | 'warning'
-            | 'primary'
-            | 'secondary'
-            | 'error';
-    };
+    chipFormatter: (status: PaymentStatus) => ChipProps;
 };

@@ -1,7 +1,16 @@
+import { ChipProps } from 'components/Chip/Chip.type';
+import { PaymentStatus, PaymentType } from 'components/Table/Table.types';
+
 import { Card, Table } from '@components';
 import { useDataContext } from '@context';
 
 export const Transactions = () => {
+    /**
+     *
+     * @param date - Date object to format
+     * @returns - Formatted string according to the design
+     * @description- e.g- for input new Date(2025, 03, 01) return Apr 01, 2025
+     */
     const tableDateFormatter = (date: Date) => {
         const options = {
             month: 'short',
@@ -11,9 +20,12 @@ export const Transactions = () => {
         return new Intl.DateTimeFormat('en-US', options).format(date);
     };
 
-    type PaymentType = 'credit' | 'debit';
-    type PaymentStatus = 'completed' | 'in-progress' | 'cancelled';
-
+    /**
+     *
+     * @param paymentType - type of the payment(debit | credit)
+     * @param paymentStatus - status of the payment(completed | in-progress | cancelled)
+     * @returns Formatted payment status
+     */
     const formatPayment = (
         paymentType: PaymentType,
         paymentStatus: PaymentStatus,
@@ -27,18 +39,12 @@ export const Transactions = () => {
         }
     };
 
-    const formatChip = (
-        status: PaymentStatus,
-    ): {
-        label: string;
-        color:
-            | 'success'
-            | 'info'
-            | 'warning'
-            | 'primary'
-            | 'secondary'
-            | 'error';
-    } => {
+    /**
+     *
+     * @param status - status of the payment (completed | in-progress | cancelled)
+     * @returns - A chip prop object to format the chip
+     */
+    const formatChip = (status: PaymentStatus): ChipProps => {
         switch (status) {
             case 'completed':
                 return {
@@ -77,7 +83,7 @@ export const Transactions = () => {
     ];
     const { transactionData } = useDataContext();
     const transactions = transactionData.map((item) => ({
-        name: `${item.name}`,
+        name: item.name,
         statement: formatPayment(item.type, item.status),
         date: item.date,
         amount: `$${item.amount}`,

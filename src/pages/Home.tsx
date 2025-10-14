@@ -31,7 +31,7 @@ export const Home = () => {
                     <TopProducts />
                 </Box>
             </Stack>
-            <Box>
+            <Box component="section">
                 <Transactions />
             </Box>
         </Stack>
