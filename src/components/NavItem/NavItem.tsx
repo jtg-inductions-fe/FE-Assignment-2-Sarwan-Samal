@@ -24,7 +24,7 @@ export const NavItem = ({
             sx={{ ml: Icon ? 0 : 8 }}
         >
             {Icon && <Icon />}
-            <Typography variant="subtitle1" fontWeight={500}>
+            <Typography variant="subtitle1" fontWeight={500} component="span">
                 {label}
             </Typography>
         </Box>

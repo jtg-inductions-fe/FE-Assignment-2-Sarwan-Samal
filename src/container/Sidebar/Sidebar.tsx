@@ -47,7 +47,7 @@ export const Sidebar = ({ items, open, onClose }: SideBarProps) => {
             <Stack direction="row" justifyContent="center" gap={5}>
                 <IconButton
                     icon={AdjustmentIcon}
-                    size="small"
+                    size="medium"
                     onClick={() => {
                         void navigate(ROUTES.ADJUSTMENTS);
                         onClose();
@@ -56,7 +56,7 @@ export const Sidebar = ({ items, open, onClose }: SideBarProps) => {
                 />
                 <IconButton
                     icon={GlobeIcon}
-                    size="small"
+                    size="medium"
                     onClick={() => {
                         void navigate(ROUTES.GLOBE);
                         onClose();
@@ -65,7 +65,7 @@ export const Sidebar = ({ items, open, onClose }: SideBarProps) => {
                 />
                 <IconButton
                     icon={CogIcon}
-                    size="small"
+                    size="medium"
                     onClick={() => {
                         void navigate(ROUTES.COG);
                         onClose();

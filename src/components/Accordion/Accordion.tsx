@@ -23,7 +23,7 @@ export const Accordion = ({
             onClick={(e) => e.stopPropagation()}
         >
             {Icon && <Icon />}
-            <Typography variant="subtitle1" fontWeight={500}>
+            <Typography variant="subtitle1" fontWeight={500} component="span">
                 {label}
             </Typography>
         </StyledAccordionSummary>

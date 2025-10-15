@@ -1,3 +1,5 @@
+import { useMemo } from 'react';
+
 import { ChipProps } from 'components/Chip/Chip.type';
 import { PaymentStatus, PaymentType } from 'components/Table/Table.types';
 
@@ -82,14 +84,19 @@ export const Transactions = () => {
         },
     ];
     const { transactionData } = useDataContext();
-    const transactions = transactionData.map((item) => ({
-        name: item.name,
-        statement: formatPayment(item.type, item.status),
-        date: item.date,
-        amount: `$${item.amount}`,
-        status: item.status,
-        type: item.type,
-    }));
+
+    const latestTransaction = useMemo(
+        () =>
+            transactionData.map((item) => ({
+                name: item.name,
+                statement: formatPayment(item.type, item.status),
+                date: item.date,
+                amount: `$${item.amount}`,
+                status: item.status,
+                type: item.type,
+            })),
+        [transactionData],
+    );
     return (
         <Card
             size="md"
@@ -98,7 +105,7 @@ export const Transactions = () => {
         >
             <Table
                 headingRow={tableHeading}
-                rowData={transactions}
+                rowData={latestTransaction}
                 tableDateFormatter={tableDateFormatter}
                 chipFormatter={formatChip}
             />
