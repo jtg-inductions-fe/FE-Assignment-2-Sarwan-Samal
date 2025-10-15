@@ -1,6 +1,12 @@
 import { Box, Stack, useMediaQuery, useTheme } from '@mui/material';
 
-import { ImageGrid, LatestCustomer, Sales, TopProducts } from '@container';
+import {
+    ImageGrid,
+    LatestCustomer,
+    Sales,
+    TopProducts,
+    Transactions,
+} from '@container';
 
 export const Home = () => {
     const theme = useTheme();
@@ -25,6 +31,9 @@ export const Home = () => {
                     <TopProducts />
                 </Box>
             </Stack>
+            <Box component="section">
+                <Transactions />
+            </Box>
         </Stack>
     );
 };
