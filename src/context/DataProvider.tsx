@@ -1,7 +1,12 @@
 import { ReactNode } from 'react';
 
-import { ProductData, SalesData, UserData } from '@mocks';
-import { SidebarData } from '@mocks';
+import {
+    CustomerData,
+    ProductData,
+    SalesData,
+    SidebarData,
+    UserData,
+} from '@mocks';
 
 import { DataContext } from './DataContext';
 
@@ -12,6 +17,7 @@ export const DataProvider = ({ children }: { children: ReactNode }) => (
             user: UserData,
             sidebarData: SidebarData,
             salesData: SalesData,
+            customerData: CustomerData,
         }}
     >
         {children}

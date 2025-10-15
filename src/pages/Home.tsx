@@ -1,7 +1,6 @@
 import { Box, Stack } from '@mui/material';
 
-import { ImageGrid } from '@container';
-import { Sales } from '@container';
+import { ImageGrid, LatestCustomer, Sales } from '@container';
 
 export const Home = () => (
     <Stack p={4} gap={4}>
@@ -10,6 +9,9 @@ export const Home = () => (
         </Box>
         <Box component="section">
             <Sales />
+        </Box>
+        <Box component="section">
+            <LatestCustomer />
         </Box>
     </Stack>
 );

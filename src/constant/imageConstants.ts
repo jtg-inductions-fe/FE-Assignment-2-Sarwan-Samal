@@ -14,12 +14,12 @@ import thomasAvatar from '@assets/images/thomasAvatar.webp';
 import WRONG_PAGE from '@assets/images/wrongPage.webp';
 
 export const USER_AVATAR = [
-    bonnieAvatar,
-    karenAvatar,
-    lanaAvatar,
-    michealAvatar,
     neilAvatar,
+    bonnieAvatar,
+    michealAvatar,
     thomasAvatar,
+    lanaAvatar,
+    karenAvatar,
 ] as const;
 
 export const GRID_IMAGES = [

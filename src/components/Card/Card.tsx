@@ -35,6 +35,6 @@ export const Card = ({
                 </Typography>
             )}
         </Box>
-        {children}
+        <Box>{children}</Box>
     </StyledCard>
 );
