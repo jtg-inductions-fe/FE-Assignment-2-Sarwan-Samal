@@ -11,7 +11,8 @@
             "@container": ["container"],
             "@components": ["components"],
             "@mocks": ["mocks"],
-            "@context": ["context"]
+            "@context": ["context"],
+            "@hooks": ["hooks"]
         }
     }
 }

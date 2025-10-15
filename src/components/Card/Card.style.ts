@@ -19,5 +19,6 @@ export const StyledCard = styled(Card, {
         display: 'flex',
         flexDirection: 'column',
         gap: spacing(4),
+        height: '100%',
     };
 });
