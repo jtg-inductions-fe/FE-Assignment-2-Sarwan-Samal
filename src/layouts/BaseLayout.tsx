@@ -4,6 +4,7 @@ import { Outlet } from 'react-router';
 
 import { Box, Stack } from '@mui/material';
 
+import { CustomErrorBoundary } from '@components';
 import { Header, Sidebar } from '@container';
 import { useDataContext } from '@context';
 export const BaseLayout = () => {
@@ -15,16 +16,18 @@ export const BaseLayout = () => {
     return (
         <>
             <Header onMenuClick={toggleSidebar} />
-            <Stack direction="row">
-                <Sidebar
-                    items={sidebarData}
-                    open={isSidebarOpen}
-                    onClose={toggleSidebar}
-                />
-                <Box component="main" maxWidth={1600} mx="auto">
-                    <Outlet />
-                </Box>
-            </Stack>
+            <CustomErrorBoundary>
+                <Stack direction="row">
+                    <Sidebar
+                        items={sidebarData}
+                        open={isSidebarOpen}
+                        onClose={toggleSidebar}
+                    />
+                    <Box component="main" maxWidth={1600} mx="auto">
+                        <Outlet />
+                    </Box>
+                </Stack>
+            </CustomErrorBoundary>
         </>
     );
 };

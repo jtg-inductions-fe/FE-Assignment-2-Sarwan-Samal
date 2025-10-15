@@ -29,6 +29,7 @@ export const Sidebar = ({ items, open, onClose }: SideBarProps) => {
                                 label={item.label}
                                 icon={item.icon}
                                 items={item.children}
+                                onClick={onClose}
                             ></Accordion>
                         ) : (
                             <NavItem
@@ -36,6 +37,7 @@ export const Sidebar = ({ items, open, onClose }: SideBarProps) => {
                                 label={item.label}
                                 to={item.to ?? '/'}
                                 chipValue={item.notificationCount?.toString()}
+                                onClick={onClose}
                             />
                         )}
                         {index == DIVIDER_AFTER_INDEX && <Divider />}
@@ -46,19 +48,28 @@ export const Sidebar = ({ items, open, onClose }: SideBarProps) => {
                 <IconButton
                     icon={AdjustmentIcon}
                     size="small"
-                    onClick={() => void navigate(ROUTES.ADJUSTMENTS)}
+                    onClick={() => {
+                        void navigate(ROUTES.ADJUSTMENTS);
+                        onClose();
+                    }}
                     aria-label="Adjustment"
                 />
                 <IconButton
                     icon={GlobeIcon}
                     size="small"
-                    onClick={() => void navigate(ROUTES.GLOBE)}
+                    onClick={() => {
+                        void navigate(ROUTES.GLOBE);
+                        onClose();
+                    }}
                     aria-label="Globe"
                 />
                 <IconButton
                     icon={CogIcon}
                     size="small"
-                    onClick={() => void navigate(ROUTES.COG)}
+                    onClick={() => {
+                        void navigate(ROUTES.COG);
+                        onClose();
+                    }}
                     aria-label="Cog"
                 />
             </Stack>

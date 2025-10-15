@@ -1,7 +1,7 @@
 import type { Components } from '@mui/material/styles';
 
-import InterRegularTTF from '@assets/fonts/inter/inter-regular.ttf';
-import InterRegularWOFF2 from '@assets/fonts/inter/inter-regular.woff2';
+import InterVariableTTF from '@assets/fonts/inter/InterVariable.ttf';
+import InterVariableWOFF2 from '@assets/fonts/inter/InterVariable.woff2';
 
 export const components: Components = {
     MuiCssBaseline: {
@@ -13,9 +13,9 @@ export const components: Components = {
                 fontDisplay: 'swap',
                 fontFamily: 'Inter',
                 fontStyle: 'normal',
-                fontWeight: '400',
-                src: `url(${InterRegularWOFF2}) format('woff2'), 
-        url(${InterRegularTTF}) format('truetype')`,
+                fontWeight: '100 900',
+                src: `url(${InterVariableWOFF2}) format('woff2'), 
+        url(${InterVariableTTF}) format('truetype')`,
             },
         },
     },

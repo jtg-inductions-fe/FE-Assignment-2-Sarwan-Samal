@@ -1,8 +1,28 @@
-import { FallbackProps } from 'react-error-boundary';
+import { useNavigate } from 'react-router-dom';
 
-export const ErrorFallback = ({ error }: FallbackProps) => (
-    <div>
-        <h2>Something Went Wrong: </h2>
-        <pre>{error.message}</pre>
-    </div>
-);
+import { ErrorComponent } from '@components';
+import { ERROR_MESSAGES, ROUTES, WRONG_PAGE } from '@constant';
+
+type FallbackProps = {
+    error: Error;
+    resetError: () => void;
+};
+
+export const ErrorFallback = ({ resetError }: FallbackProps) => {
+    const navigate = useNavigate();
+    const handleRedirect = () => {
+        resetError();
+        void navigate(ROUTES.HOME);
+    };
+    return (
+        <ErrorComponent
+            img={WRONG_PAGE}
+            title={ERROR_MESSAGES.WRONG_PAGE.title}
+            description={ERROR_MESSAGES.WRONG_PAGE.description}
+            buttonConfig={{
+                onClick: handleRedirect,
+                children: 'Go back home',
+            }}
+        ></ErrorComponent>
+    );
+};

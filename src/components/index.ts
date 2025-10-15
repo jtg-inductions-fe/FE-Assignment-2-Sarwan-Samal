@@ -5,3 +5,6 @@ export { Logo } from './Logo';
 export { Chip } from './Chip';
 export { NavItem } from './NavItem';
 export { Accordion } from './Accordion';
+export { Button } from './Button';
+export { ErrorComponent } from './Error';
+export { CustomErrorBoundary, CustomError } from './ErrorBoundary';
