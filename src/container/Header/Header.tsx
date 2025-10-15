@@ -7,12 +7,14 @@ import NotificationsIcon from '@assets/icons/Bell.svg?react';
 import MenuIcon from '@assets/icons/menu.svg?react';
 import { Avatar, IconButton, Logo, SearchBar } from '@components';
 import { LOGO } from '@constant';
+import { ROUTES } from '@constant';
 import { useDataContext } from '@context';
 import type { Product } from '@mocks';
 
 import { HeaderBox } from './Header.style';
+import { HeaderProps } from './Header.type';
 
-export const Header = () => {
+export const Header = ({ onMenuClick }: HeaderProps) => {
     const theme = useTheme();
     const navigate = useNavigate();
     const isMedium = useMediaQuery(theme.breakpoints.up('md'));
@@ -32,7 +34,7 @@ export const Header = () => {
         navigate: nav,
     }: HandleSearchProps) => {
         const val = typeof value === 'string' ? value.trim() : '';
-        if (!val) void nav('/');
+        if (!val) void nav(ROUTES.HOME);
         const currProd = Products.find((product) => product.title === val);
         if (currProd) void nav(currProd.to);
         else void nav(val);
@@ -42,7 +44,7 @@ export const Header = () => {
         <HeaderBox>
             {isMedium ? (
                 <Stack direction="row" gap={8} alignItems="center">
-                    <Logo src={LOGO} to="/" alt="Logo"></Logo>
+                    <Logo src={LOGO} to={ROUTES.HOME} alt="Logo"></Logo>
                     <SearchBar
                         placeholder="Search"
                         options={productList}
@@ -58,7 +60,11 @@ export const Header = () => {
                     />
                 </Stack>
             ) : (
-                <IconButton size="large" aria-label="Open Menu">
+                <IconButton
+                    size="large"
+                    aria-label="Open Menu"
+                    onClick={onMenuClick}
+                >
                     <MenuIcon />
                 </IconButton>
             )}
@@ -68,7 +74,7 @@ export const Header = () => {
                     size="medium"
                     hasBoxShadow={isMedium}
                     isRounded={isMedium}
-                    onClick={() => void navigate('/notfications')}
+                    onClick={() => void navigate(ROUTES.NOTIFICATIONS)}
                     icon={NotificationsIcon}
                 />
                 <IconButton size="medium" isRounded hasBoxShadow={isMedium}>

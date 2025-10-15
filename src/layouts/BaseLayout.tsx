@@ -1,20 +1,30 @@
-import { ErrorBoundary } from 'react-error-boundary';
+import { useState } from 'react';
+
 import { Outlet } from 'react-router';
 
-import { Header } from '@container';
-import { DataProvider } from '@context';
-import { ErrorFallback } from '@pages';
+import { Box, Stack } from '@mui/material';
 
-export const BaseLayout = () => (
-    <>
-        <DataProvider>
-            <Header />
-            <ErrorBoundary FallbackComponent={ErrorFallback}>
-                <main>
+import { Header, Sidebar } from '@container';
+import { useDataContext } from '@context';
+export const BaseLayout = () => {
+    const { sidebarData } = useDataContext();
+    const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+    const toggleSidebar = () => {
+        setIsSidebarOpen((prev) => !prev);
+    };
+    return (
+        <>
+            <Header onMenuClick={toggleSidebar} />
+            <Stack direction="row">
+                <Sidebar
+                    items={sidebarData}
+                    open={isSidebarOpen}
+                    onClose={toggleSidebar}
+                />
+                <Box component="main" maxWidth={1600} mx="auto">
                     <Outlet />
-                </main>
-            </ErrorBoundary>
-            <footer>Footer</footer>
-        </DataProvider>
-    </>
-);
+                </Box>
+            </Stack>
+        </>
+    );
+};
