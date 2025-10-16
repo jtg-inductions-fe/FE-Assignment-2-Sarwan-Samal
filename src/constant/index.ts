@@ -15,6 +15,6 @@ export {
     mainAvatar,
     USER_AVATAR,
     GRID_IMAGES,
-} from './imageConstants';
+} from './assetsConstants';
 export { ROUTES } from './routeConstant';
 export { ERROR_MESSAGES } from './errorMessages';

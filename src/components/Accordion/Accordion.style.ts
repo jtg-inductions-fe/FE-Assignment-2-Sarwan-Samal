@@ -13,7 +13,7 @@ export const StyledAccordion = styled(Accordion)(({ theme: { spacing } }) => ({
 }));
 
 export const StyledAccordionSummary = styled(AccordionSummary)(
-    ({ theme: { palette, spacing, shape } }) => ({
+    ({ theme: { palette, spacing } }) => ({
         borderRadius: spacing(3),
         padding: spacing(1, 2),
         minHeight: spacing(4),
@@ -25,7 +25,7 @@ export const StyledAccordionSummary = styled(AccordionSummary)(
         '&.Mui-expanded': {
             minHeight: spacing(4),
             backgroundColor: palette.secondary.light,
-            borderRadius: shape.borderRadius * 3,
+            borderRadius: spacing(3),
         },
         '& .MuiAccordionSummary-content.Mui-expanded': {
             margin: 0,

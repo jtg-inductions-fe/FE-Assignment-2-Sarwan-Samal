@@ -1,1 +1,1 @@
-export { LatestCustomer } from './LatestCustomer';
+export { LatestCustomer } from './LatestCustomer.container';

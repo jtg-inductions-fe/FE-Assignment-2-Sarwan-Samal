@@ -1,10 +1,26 @@
 import { createContext, useContext } from 'react';
 
+import {
+    CustomerData,
+    ProductData,
+    SalesData,
+    SidebarData,
+    TransactionData,
+    UserData,
+} from '@data';
+
 import { DataContextType } from './DataContext.type';
 
-export const DataContext = createContext<DataContextType | undefined>(
-    undefined,
-);
+export const defaultValue: DataContextType = {
+    products: ProductData,
+    user: UserData,
+    sidebarData: SidebarData,
+    salesData: SalesData,
+    customerData: CustomerData,
+    transactionData: TransactionData,
+};
+
+export const DataContext = createContext<DataContextType>(defaultValue);
 
 export const useDataContext = () => {
     const context = useContext(DataContext);

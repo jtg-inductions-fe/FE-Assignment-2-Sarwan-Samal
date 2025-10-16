@@ -1,1 +1,1 @@
-export { TopProducts } from './TopProducts';
+export { TopProducts } from './TopProducts.container';

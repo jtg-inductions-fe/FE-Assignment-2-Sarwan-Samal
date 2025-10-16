@@ -61,7 +61,7 @@ export default tseslint.config(
                         ['^\\w'],
                         ['^@mui'],
                         [
-                            '^@(?:|assets|components|constant|container|context|hooks|layouts|mocks|pages|routes|theme)',
+                            '^@(?:|assets|components|constant|container|context|hooks|data|pages|routes|theme)',
                         ],
                         ['^\\./', '^\\.\\./'],
                     ],

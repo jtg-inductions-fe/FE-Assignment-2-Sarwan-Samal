@@ -12,7 +12,7 @@ export const ErrorFallback = ({ resetError }: FallbackProps) => {
     const navigate = useNavigate();
     const handleRedirect = () => {
         resetError();
-        void navigate(ROUTES.HOME);
+        void navigate(ROUTES.CORE.HOME);
     };
     return (
         <ErrorComponent

@@ -6,8 +6,8 @@ export type AccordionItem = {
 
 export type AccordionProps = {
     label: string;
-    to?: string;
     icon: React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
+    to?: string;
     items?: AccordionItem[];
     handleClose?: () => void;
 } & Omit<MuiAccordionProps, 'children'>;

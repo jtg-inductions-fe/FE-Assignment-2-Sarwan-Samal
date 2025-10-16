@@ -11,7 +11,7 @@ export const PageNotFound = () => {
             title={ERROR_MESSAGES.PAGE_NOT_FOUND.title}
             description={ERROR_MESSAGES.PAGE_NOT_FOUND.description}
             buttonConfig={{
-                onClick: () => void navigate(ROUTES.HOME),
+                onClick: () => void navigate(ROUTES.CORE.HOME),
                 children: 'Go back home',
             }}
         ></ErrorComponent>

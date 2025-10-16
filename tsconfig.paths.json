@@ -5,14 +5,15 @@
             "@assets/*": ["assets/*"],
             "@constant": ["constant/index"],
             "@theme": ["theme/index"],
-            "@layouts": ["layouts"],
             "@routes": ["routes"],
             "@pages": ["pages"],
             "@container": ["container"],
             "@components": ["components"],
-            "@mocks": ["mocks"],
+            "@data": ["data"],
             "@context": ["context"],
-            "@hooks": ["hooks"]
+            "@hooks": ["hooks"],
+            "@model": ["model"],
+            "@utils": ["utils"]
         }
     }
 }

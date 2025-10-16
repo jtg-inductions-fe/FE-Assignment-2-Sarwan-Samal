@@ -1,2 +1,2 @@
 export { CustomErrorBoundary } from './ErrorBoundary';
-export { CustomError } from './CustomError';
+export { CustomError } from './CustomError.component';

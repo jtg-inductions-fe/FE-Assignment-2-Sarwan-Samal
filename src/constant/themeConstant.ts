@@ -47,7 +47,7 @@ export const SCALING_FACTOR = 4;
 export const HEADER_HEIGHT_MOBILE = 64;
 
 /**
- * Height for header in mobile.
+ * Height for header in desktop.
  * @constant
  */
 export const HEADER_HEIGHT_DESKTOP = 70;
