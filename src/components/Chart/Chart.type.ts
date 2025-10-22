@@ -1,4 +1,4 @@
-import type { Sales } from '@model';
+import type { Sales } from '@data';
 export type ChartProps = {
     data: Sales[];
     xAxisFormatter: (date: Date) => string;

@@ -1,4 +1,4 @@
-import { Transaction } from '@model';
+import { Transaction } from '@data';
 
 export const TransactionData: Transaction[] = [
     {
