@@ -1,6 +1,7 @@
 import { useMediaQuery } from '@mui/material';
 
 import ExclamationIcon from '@assets/icons/exclamation-circle.svg?react';
+
 import { Card, Chart } from '@components';
 import { useDataContext } from '@context';
 import { theme } from '@theme';

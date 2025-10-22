@@ -26,8 +26,8 @@ export const Chart = ({
     const isMedium = useMediaQuery(theme.breakpoints.up('md'));
 
     const tickStyle = {
-        fontSize: '14px',
-        fontWeight: 600,
+        fontSize: theme.typography.pxToRem(14),
+        fontWeight: theme.typography.fontWeightMedium,
         fill: theme.palette.text.secondary,
     };
 

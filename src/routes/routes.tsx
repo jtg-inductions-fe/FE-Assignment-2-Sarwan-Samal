@@ -6,7 +6,9 @@ import { ROUTES } from '@constant';
 import { Home, PageNotFound } from '@pages';
 
 const getDevErrorRoutes = () => {
-    if (!import.meta.env.DEV) return [];
+    if (!import.meta.env.DEV) {
+        return [];
+    }
 
     return [
         {

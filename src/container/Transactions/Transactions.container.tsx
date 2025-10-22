@@ -2,8 +2,8 @@ import { useMemo } from 'react';
 
 import { Card, Table } from '@components';
 import { useDataContext } from '@context';
+import { TransactionAdapter } from '@model';
 import { dateFormatter } from '@utils';
-import { TransactionAdapter } from '@utils';
 import { chipFormatter } from '@utils';
 
 export const Transactions = () => {
@@ -36,8 +36,8 @@ export const Transactions = () => {
 
     const latestTransaction = useMemo(
         () =>
-            transactionData.map((item) =>
-                new TransactionAdapter(item).adapter(),
+            transactionData.map(
+                (item) => new TransactionAdapter(item).adaptedTransaction,
             ),
         [transactionData],
     );

@@ -7,6 +7,7 @@ import { Divider, Stack, useMediaQuery } from '@mui/material';
 import AdjustmentIcon from '@assets/icons/adjustments.svg?react';
 import CogIcon from '@assets/icons/cog.svg?react';
 import GlobeIcon from '@assets/icons/globe.svg?react';
+
 import { Accordion, IconButton, NavItem } from '@components';
 import { DIVIDER_AFTER_INDEX, ROUTES } from '@constant';
 import { theme } from '@theme';

@@ -1,5 +1,5 @@
 import { USER_AVATAR } from '@constant';
-import { Customer } from '@model';
+import { Customer } from '@data';
 
 export const CustomerData: Customer[] = [
     {

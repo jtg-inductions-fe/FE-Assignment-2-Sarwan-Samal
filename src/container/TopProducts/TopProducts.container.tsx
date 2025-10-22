@@ -11,14 +11,15 @@ import {
 import { Card, ListItem } from '@components';
 import { useDataContext } from '@context';
 import { useListContainer } from '@hooks';
-import { ProductAdapter } from '@utils';
+import { ProductAdapter } from '@model';
 
 export const TopProducts = () => {
     const { products } = useDataContext();
     const theme = useTheme();
     const isMedium = useMediaQuery(theme.breakpoints.up('md'));
-    const topProducts = useListContainer(products, (item) =>
-        new ProductAdapter(item).adapter(),
+    const topProducts = useListContainer(
+        products,
+        (item) => new ProductAdapter(item).adaptedProduct,
     );
 
     return (

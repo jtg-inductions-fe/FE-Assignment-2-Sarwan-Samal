@@ -1,5 +1,5 @@
 import { mainAvatar } from '@constant';
-import { User } from '@model';
+import { User } from '@data';
 
 export const UserData: User = {
     name: 'Sarwan Samal',

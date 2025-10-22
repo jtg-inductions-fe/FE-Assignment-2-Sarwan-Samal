@@ -12,14 +12,15 @@ import { Card } from '@components';
 import { ListItem } from '@components';
 import { useDataContext } from '@context';
 import { useListContainer } from '@hooks';
-import { CustomerAdapter } from '@utils';
+import { CustomerAdapter } from '@model';
 
 export const LatestCustomer = () => {
     const { customerData } = useDataContext();
     const theme = useTheme();
     const isMedium = useMediaQuery(theme.breakpoints.up('md'));
-    const latestCustomer = useListContainer(customerData, (item) =>
-        new CustomerAdapter(item).adapter(),
+    const latestCustomer = useListContainer(
+        customerData,
+        (item) => new CustomerAdapter(item).adaptedCustomer,
     );
 
     return (

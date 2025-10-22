@@ -1,4 +1,4 @@
-import { Sales } from '@model';
+import { Sales } from '@data';
 
 export const SalesData: Sales[] = [
     { sales: 100000, date: new Date(2025, 3, 1) },

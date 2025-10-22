@@ -1,5 +1,5 @@
 import type { SidebarItemProps } from '@container';
-import type { Customer, Product, Sales, Transaction, User } from '@model';
+import type { Customer, Product, Sales, Transaction, User } from '@data';
 
 export type DataContextType = {
     products: Product[];

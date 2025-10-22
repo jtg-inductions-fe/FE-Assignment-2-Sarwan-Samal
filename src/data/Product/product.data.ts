@@ -1,4 +1,4 @@
-import { Product } from '@model';
+import { Product } from '@data';
 
 export const ProductData: Product[] = [
     {

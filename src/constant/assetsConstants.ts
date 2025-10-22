@@ -1,9 +1,9 @@
 import PAGE_404 from '@assets/images/404Page.webp';
 import bonnieAvatar from '@assets/images/bonnieAvatar.webp';
-import gridImage4 from '@assets/images/gridImage-1.webp';
-import gridImage1 from '@assets/images/gridImage-2.webp';
-import gridImage3 from '@assets/images/gridImage-3.webp';
-import gridImage2 from '@assets/images/gridImage-4.webp';
+import gridImage5 from '@assets/images/gridImage-5.webp';
+import gridImage6 from '@assets/images/gridImage-6.webp';
+import gridImage7 from '@assets/images/gridImage-7.webp';
+import gridImage8 from '@assets/images/gridImage-8.webp';
 import karenAvatar from '@assets/images/karenAvatar.webp';
 import lanaAvatar from '@assets/images/lanaAvatar.webp';
 import LOGO from '@assets/images/Logo.svg';
@@ -23,10 +23,10 @@ export const USER_AVATAR = [
 ] as const;
 
 export const GRID_IMAGES = [
-    gridImage1,
-    gridImage2,
-    gridImage3,
-    gridImage4,
+    gridImage5,
+    gridImage6,
+    gridImage7,
+    gridImage8,
 ] as const;
 
 export { LOGO, PAGE_404, WRONG_PAGE, mainAvatar };

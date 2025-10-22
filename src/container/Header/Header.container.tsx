@@ -1,3 +1,5 @@
+import { useEffect, useMemo, useState } from 'react';
+
 import { HandleSearchProps } from 'components/SearchBar/SearchBar.type';
 import { useNavigate } from 'react-router-dom';
 
@@ -5,11 +7,12 @@ import { Stack, useMediaQuery, useTheme } from '@mui/material';
 
 import NotificationsIcon from '@assets/icons/Bell.svg?react';
 import MenuIcon from '@assets/icons/menu.svg?react';
+
 import { Avatar, IconButton, Logo, SearchBar } from '@components';
 import { LOGO } from '@constant';
 import { ROUTES } from '@constant';
 import { useDataContext } from '@context';
-import type { Product } from '@model';
+import type { Product } from '@data';
 
 import { HeaderBox } from './Header.style';
 import { HeaderProps } from './Header.type';
@@ -21,6 +24,43 @@ export const Header = ({ onMenuClick }: HeaderProps) => {
     const { user, products } = useDataContext();
     const productList = products.map((item: Product) => item.title);
 
+    const [inputValue, setInputValue] = useState('');
+
+    const [filteredOptions, setFilteredOptions] =
+        useState<string[]>(productList);
+
+    const [loading, setLoading] = useState(false);
+
+    function debounce<T extends (...args: string[]) => void>(
+        fn: T,
+        delay: number,
+    ): (...args: Parameters<T>) => void {
+        let timeoutId: ReturnType<typeof setTimeout>;
+        return (...args: Parameters<T>) => {
+            clearTimeout(timeoutId);
+            timeoutId = setTimeout(() => {
+                fn(...args);
+            }, delay);
+        };
+    }
+
+    const debouncedFilter = useMemo(
+        () =>
+            debounce((val: string) => {
+                const filtered = productList.filter((option) =>
+                    option.toLowerCase().includes(val.toLowerCase()),
+                );
+                setFilteredOptions(filtered);
+                setLoading(false);
+            }, 1000),
+        [],
+    );
+
+    useEffect(() => {
+        setLoading(true);
+        debouncedFilter(inputValue);
+    }, [inputValue, debouncedFilter]);
+
     /**
      *
      * @param value - value of input field
@@ -30,14 +70,22 @@ export const Header = ({ onMenuClick }: HeaderProps) => {
      */
     const handleSearch = ({
         value,
-        products: Products,
+        products: productlist,
         navigate: nav,
     }: HandleSearchProps) => {
         const val = typeof value === 'string' ? value.trim() : '';
-        if (!val) void nav(ROUTES.CORE.HOME);
-        const currProd = Products.find((product) => product.title === val);
-        if (currProd) void nav(currProd.to);
-        else void nav(val);
+        if (!val) {
+            void nav(ROUTES.CORE.HOME);
+            return;
+        }
+        const currProd = productlist.find(
+            (item: Product) => item.title === val,
+        );
+        if (currProd) {
+            void nav(currProd.to);
+        } else {
+            void nav(val);
+        }
     };
 
     return (
@@ -47,7 +95,7 @@ export const Header = ({ onMenuClick }: HeaderProps) => {
                     <Logo src={LOGO} to={ROUTES.CORE.HOME} alt="Logo"></Logo>
                     <SearchBar
                         placeholder="Search"
-                        options={productList}
+                        options={filteredOptions}
                         getOptionLabel={(val: string) => val}
                         onChange={(e, value) => {
                             void handleSearch({
@@ -57,6 +105,10 @@ export const Header = ({ onMenuClick }: HeaderProps) => {
                                 navigate,
                             });
                         }}
+                        onInputChange={(_, newInputValue) =>
+                            setInputValue(newInputValue)
+                        }
+                        loading={loading}
                     />
                 </Stack>
             ) : (

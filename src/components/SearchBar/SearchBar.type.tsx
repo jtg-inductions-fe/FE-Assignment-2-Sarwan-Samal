@@ -2,7 +2,7 @@ import { NavigateFunction } from 'react-router-dom';
 
 import type { AutocompleteProps } from '@mui/material';
 
-import type { Product } from '@model';
+import type { Product } from '@data';
 
 export type SearchBarProps<T> = {
     placeholder?: string;

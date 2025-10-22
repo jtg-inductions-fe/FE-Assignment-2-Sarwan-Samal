@@ -5,6 +5,7 @@ import {
     ProductData,
     SalesData,
     SidebarData,
+    Transaction,
     TransactionData,
     UserData,
 } from '@data';
@@ -17,7 +18,7 @@ export const defaultValue: DataContextType = {
     sidebarData: SidebarData,
     salesData: SalesData,
     customerData: CustomerData,
-    transactionData: TransactionData,
+    transactionData: TransactionData as Transaction[],
 };
 
 export const DataContext = createContext<DataContextType>(defaultValue);
