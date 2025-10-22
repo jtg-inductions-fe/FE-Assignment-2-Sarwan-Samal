@@ -8,7 +8,7 @@ import SalesIcon from '@assets/icons/shopping-bag.svg?react';
 import HelpIcon from '@assets/icons/support.svg?react';
 
 import { ROUTES } from '@constant';
-import { SidebarItemProps } from '@container';
+import { SidebarItemProps } from '@data';
 
 export const SidebarData: SidebarItemProps[] = [
     {
