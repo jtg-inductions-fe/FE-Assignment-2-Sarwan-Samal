@@ -20,7 +20,10 @@
         "@mui/icons-material": "6.4.1",
         "@mui/material": "6.4.1",
         "react": "19.0.0",
-        "react-dom": "19.0.0"
+        "react-dom": "19.0.0",
+        "react-error-boundary": "^6.0.0",
+        "react-router-dom": "^7.9.1",
+        "recharts": "^3.2.1"
     },
     "devDependencies": {
         "@types/eslint-plugin-jsx-a11y": "6",
@@ -45,6 +48,7 @@
         "typescript-eslint": "8.21.0",
         "vite": "6.0.11",
         "vite-plugin-image-optimizer": "1.1.8",
+        "vite-plugin-svgr": "^4.5.0",
         "vite-tsconfig-paths": "5.1.4"
     }
 }
